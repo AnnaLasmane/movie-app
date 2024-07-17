@@ -1,0 +1,85 @@
+/* Variables */
+$container-max-width: 1200px;
+$font-size-root: 16px;
+
+/* Color Palette */
+$color-background: #1e1e2f; // Dark background color
+$color-primary: #ff6f61; // Vibrant coral color
+$color-secondary: #6b6b83; // Muted secondary color
+$color-accent: #f1c40f; // Bright yellow accent color
+$color-text: #ffffff; // White text color
+$color-muted: #b2bec3; // Muted grey color
+
+$primary-font-family: "Roboto", sans-serif;
+
+/* Native */
+html,
+body,
+#root {
+  margin: auto;
+  max-width: $container-max-width;
+  background-color: $color-background;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: $color-text;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $primary-font-family;
+  font-size: $font-size-root;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0.5em 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $color-accent;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
