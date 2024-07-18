@@ -1,43 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getMovies } from "../services/movieService";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, AppDispatch } from "../redux/Store";
+import { fetchMovies, setCurrentPage } from "../redux/movieSlice";
 import Pagination from "./Pagination";
 import Spinner from "./Spinner";
 import "../styles/_heroContent.scss";
 
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-}
-
 const ITEMS_PER_PAGE = 10;
 
 const HeroContent: React.FC = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [totalResults, setTotalResults] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [currentPage, setCurrentPage] = useState<number>(0);
+  const dispatch = useDispatch<AppDispatch>();
+  const { movies, totalResults, loading, currentPage } = useSelector(
+    (state: RootState) => state.movies
+  );
 
   useEffect(() => {
-    const fetchMovies = async (page: number) => {
-      setLoading(true);
-      try {
-        const data = await getMovies(page + 1);
-        setMovies(data.results);
-        setTotalResults(data.total_results);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching movies:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchMovies(currentPage); // Fetch movies for the current page
-  }, [currentPage]);
+    dispatch(fetchMovies(currentPage + 1));
+  }, [dispatch, currentPage]);
 
   const handlePageClick = (data: { selected: number }) => {
-    setCurrentPage(data.selected);
+    dispatch(setCurrentPage(data.selected));
   };
 
   if (loading) {

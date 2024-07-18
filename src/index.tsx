@@ -1,17 +1,20 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import "./styles/main.scss";
+import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { store } from "./redux/Store";
 
-const container = document.getElementById("root");
-if (container) {
-  const root = createRoot(container);
-  root.render(
-    <React.StrictMode>
+const container = document.getElementById("root")!;
+const root = createRoot(container);
+
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>
-  );
-}
+    </Provider>
+  </React.StrictMode>
+);
 
 reportWebVitals();
