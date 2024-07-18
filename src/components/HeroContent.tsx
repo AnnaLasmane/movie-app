@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getMovies } from "../services/movieService";
 import Pagination from "./Pagination";
+import Spinner from "./Spinner";
 import "../styles/_heroContent.scss";
 
 interface Movie {
@@ -14,16 +15,17 @@ const ITEMS_PER_PAGE = 10;
 
 const HeroContent: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [pageCount, setPageCount] = useState<number>(0);
+  const [totalResults, setTotalResults] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(0);
 
   useEffect(() => {
     const fetchMovies = async (page: number) => {
+      setLoading(true);
       try {
         const data = await getMovies(page + 1);
         setMovies(data.results);
-        setPageCount(Math.ceil(data.total_results / ITEMS_PER_PAGE));
+        setTotalResults(data.total_results);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching movies:", error);
@@ -39,8 +41,10 @@ const HeroContent: React.FC = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
+
+  const pageCount = Math.ceil(totalResults / ITEMS_PER_PAGE);
 
   return (
     <div className="hero-content">
