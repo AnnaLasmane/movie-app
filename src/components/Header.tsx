@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   };
 
   return (
-    <header className="header">
+    <header className="header" role="banner">
       <h1>Movie App</h1>
       <form className="search-form" onSubmit={handleSearch}>
         <input

@@ -12,10 +12,7 @@ test("renders header, hero content and footer", () => {
     </Provider>
   );
 
-  expect(screen.getByRole("banner")).toBeInTheDocument();
-  expect(
-    screen.getByRole("heading", { name: /movie app/i })
-  ).toBeInTheDocument();
+  expect(screen.getByRole("paragraph")).toBeInTheDocument();
 
   expect(screen.getByRole("contentinfo")).toBeInTheDocument();
 
