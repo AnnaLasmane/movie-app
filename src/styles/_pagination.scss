@@ -1,0 +1,50 @@
+@import "./common";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0 0.5em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    background-color: $color-secondary;
+    border-radius: 5px;
+    border: 1px solid $color-muted;
+
+    &.active {
+      font-weight: bold;
+      background-color: $color-primary;
+      color: $color-text;
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    a {
+      color: $color-text;
+      text-decoration: none;
+    }
+  }
+
+  li.previous,
+  li.next {
+    padding: 0.5em 1em;
+    background-color: $color-secondary;
+    border-radius: 5px;
+    border: 1px solid $color-muted;
+
+    a {
+      color: $color-text;
+    }
+  }
+
+  li.break-me {
+    cursor: default;
+    padding: 0.5em 1em;
+  }
+}
