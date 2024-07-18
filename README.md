@@ -85,5 +85,3 @@ yarn build
 This will create an optimized build of the application in the build directory.
 
 
-├── README.md
-└── ...
