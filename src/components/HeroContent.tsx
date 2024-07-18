@@ -1,4 +1,3 @@
-// src/components/HeroContent.tsx
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../redux/Store";
@@ -28,7 +27,7 @@ const HeroContent: React.FC = () => {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
-    dispatch(setCurrentPage(0)); // Reset to the first page on search
+    dispatch(setCurrentPage(0));
   };
 
   if (loading) {
