@@ -33,7 +33,7 @@ const HeroContent: React.FC = () => {
       }
     };
 
-    fetchMovies(currentPage);
+    fetchMovies(currentPage); // Fetch movies for the current page
   }, [currentPage]);
 
   const handlePageClick = (data: { selected: number }) => {
@@ -48,9 +48,9 @@ const HeroContent: React.FC = () => {
 
   return (
     <div className="hero-content">
-      <ul>
+      <ul className="movie-list">
         {movies.slice(0, ITEMS_PER_PAGE).map((movie) => (
-          <li key={movie.id}>
+          <li className="movie-item" key={movie.id}>
             <Link to={`/movie/${movie.id}`}>
               <img
                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}

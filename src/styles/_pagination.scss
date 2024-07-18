@@ -8,12 +8,13 @@
   list-style: none;
 
   li {
-    margin: 0 0.5em;
+    margin: 0 0.25em;
     cursor: pointer;
-    padding: 0.5em 1em;
+    padding: 0.25em 0.5em;
     background-color: $color-secondary;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid $color-muted;
+    font-size: 0.875em;
 
     &.active {
       font-weight: bold;
@@ -33,10 +34,11 @@
 
   li.previous,
   li.next {
-    padding: 0.5em 1em;
+    padding: 0.25em 0.5em;
     background-color: $color-secondary;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid $color-muted;
+    font-size: 0.875em;
 
     a {
       color: $color-text;
@@ -45,6 +47,7 @@
 
   li.break-me {
     cursor: default;
-    padding: 0.5em 1em;
+    padding: 0.25em 0.5em;
+    font-size: 0.875em;
   }
 }

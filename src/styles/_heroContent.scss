@@ -4,7 +4,7 @@
   padding: 2em;
   background-color: $color-background;
 
-  ul {
+  .movie-list {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
@@ -13,7 +13,7 @@
     list-style: none;
   }
 
-  li {
+  .movie-item {
     background-color: $color-secondary;
     border: 1px solid $color-muted;
     border-radius: 8px;
