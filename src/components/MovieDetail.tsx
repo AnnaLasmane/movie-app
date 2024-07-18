@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../services/movieService";
+import Spinner from "./Spinner";
+import BackButton from "./BackButton";
 import "../styles/_movieDetail.scss";
 
 interface Movie {
@@ -8,7 +10,7 @@ interface Movie {
   overview: string;
   poster_path: string;
   release_date: string;
-  vote_average: number;
+  runtime: number;
 }
 
 const MovieDetail: React.FC = () => {
@@ -32,24 +34,33 @@ const MovieDetail: React.FC = () => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   if (!movie) {
-    return <div>Movie not found</div>;
+    return <div>No movie found</div>;
   }
 
   return (
     <div className="movie-detail">
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.title}
-      />
-      <div className="movie-info">
+      <div className="movie-detail-header">
+        <BackButton />
         <h1>{movie.title}</h1>
-        <p>{movie.overview}</p>
-        <p>Release Date: {movie.release_date}</p>
-        <p>Rating: {movie.vote_average}/10</p>
+      </div>
+      <div className="movie-detail-content">
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
+        />
+        <div className="movie-detail-text">
+          <p>{movie.overview}</p>
+          <p>
+            <strong>Release Date:</strong> {movie.release_date}
+          </p>
+          <p>
+            <strong>Runtime:</strong> {movie.runtime} minutes
+          </p>
+        </div>
       </div>
     </div>
   );
