@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../redux/Store";
 import { fetchMovies, setCurrentPage } from "../redux/movieSlice";
 import Pagination from "./Pagination";
 import Spinner from "./Spinner";
+import MovieCard from "./MovieCard";
 import "../styles/_heroContent.scss";
 
 const ITEMS_PER_PAGE = 10;
@@ -33,15 +33,12 @@ const HeroContent: React.FC = () => {
     <div className="hero-content">
       <ul className="movie-list">
         {movies.slice(0, ITEMS_PER_PAGE).map((movie) => (
-          <li className="movie-item" key={movie.id}>
-            <Link to={`/movie/${movie.id}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                alt={movie.title}
-              />
-              <p>{movie.title}</p>
-            </Link>
-          </li>
+          <MovieCard
+            key={movie.id}
+            id={movie.id}
+            title={movie.title}
+            posterPath={movie.poster_path}
+          />
         ))}
       </ul>
       <Pagination
