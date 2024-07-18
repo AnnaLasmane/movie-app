@@ -84,48 +84,6 @@ yarn build
 
 This will create an optimized build of the application in the build directory.
 
-### Folder Structure
 
-movie-app/
-├── public/
-│ ├── index.html
-│ └── ...
-├── src/
-│ ├── components/
-│ │ ├── Header.tsx
-│ │ ├── HeroContent.tsx
-│ │ ├── MovieCard.tsx
-│ │ ├── MovieDetail.tsx
-│ │ ├── Pagination.tsx
-│ │ ├── Spinner.tsx
-│ │ └── ...
-│ ├── redux/
-│ │ ├── movieSlice.ts
-│ │ ├── Store.ts
-│ │ └── ...
-│ ├── services/
-│ │ └── movieService.ts
-│ ├── styles/
-│ │ ├── \_common.scss
-│ │ ├── \_header.scss
-│ │ ├── \_heroContent.scss
-│ │ ├── \_movieCard.scss
-│ │ ├── \_movieDetail.scss
-│ │ ├── \_pagination.scss
-│ │ ├── \_spinner.scss
-│ │ └── ...
-│ ├── tests/
-│ │ ├── App.test.tsx
-│ │ ├── Header.test.tsx
-│ │ ├── HeroContent.test.tsx
-│ │ ├── MovieCard.test.tsx
-│ │ ├── MovieDetail.test.tsx
-│ │ ├── Pagination.test.tsx
-│ │ └── ...
-│ ├── App.tsx
-│ ├── index.tsx
-│ └── ...
-├── .gitignore
-├── package.json
 ├── README.md
 └── ...
