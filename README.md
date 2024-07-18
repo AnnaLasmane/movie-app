@@ -1,46 +1,131 @@
-# Getting Started with Create React App
+# Movie App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Movie App built with React, Redux, TypeScript, and SCSS. The application allows users to browse popular movies, search for movies, and view detailed information about each movie.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Browse popular movies
+- Search for movies by name
+- View detailed information about each movie
+- Pagination to navigate through the list of movies
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Frontend**: React, TypeScript, SCSS
+- **State Management**: Redux Toolkit
+- **Routing**: React Router
+- **HTTP Client**: Axios
+- **Testing**: Jest, React Testing Library
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure you have the following installed on your machine:
 
-### `npm run build`
+- Node.js (>=14.x)
+- npm (>=6.x) or yarn (>=1.x)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ````sh
+   git clone https://github.com/AnnaLasmane/movie-app.git
+   cd movie-app  ```
 
-### `npm run eject`
+   ````
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Install the dependencies:
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To start the development server, run:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+npm start
+# or
+yarn start
+```
 
-## Learn More
+This will start the application on http://localhost:3000.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running Tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm test
+# or
+yarn test
+```
+
+### Viewing Test Coverage
+
+```sh
+npm test -- --coverage
+# or
+yarn test --
+
+```
+
+### Building for Production
+
+To create a production build, run:
+
+```sh
+npm run build
+# or
+yarn build
+```
+
+This will create an optimized build of the application in the build directory.
+
+### Folder Structure
+
+movie-app/
+├── public/
+│ ├── index.html
+│ └── ...
+├── src/
+│ ├── components/
+│ │ ├── Header.tsx
+│ │ ├── HeroContent.tsx
+│ │ ├── MovieCard.tsx
+│ │ ├── MovieDetail.tsx
+│ │ ├── Pagination.tsx
+│ │ ├── Spinner.tsx
+│ │ └── ...
+│ ├── redux/
+│ │ ├── movieSlice.ts
+│ │ ├── Store.ts
+│ │ └── ...
+│ ├── services/
+│ │ └── movieService.ts
+│ ├── styles/
+│ │ ├── \_common.scss
+│ │ ├── \_header.scss
+│ │ ├── \_heroContent.scss
+│ │ ├── \_movieCard.scss
+│ │ ├── \_movieDetail.scss
+│ │ ├── \_pagination.scss
+│ │ ├── \_spinner.scss
+│ │ └── ...
+│ ├── tests/
+│ │ ├── App.test.tsx
+│ │ ├── Header.test.tsx
+│ │ ├── HeroContent.test.tsx
+│ │ ├── MovieCard.test.tsx
+│ │ ├── MovieDetail.test.tsx
+│ │ ├── Pagination.test.tsx
+│ │ └── ...
+│ ├── App.tsx
+│ ├── index.tsx
+│ └── ...
+├── .gitignore
+├── package.json
+├── README.md
+└── ...
