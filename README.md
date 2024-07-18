@@ -32,7 +32,7 @@ Make sure you have the following installed on your machine:
 
    ````sh
    git clone https://github.com/AnnaLasmane/movie-app.git
-   cd movie-app  ```
+   cd movie-app 
 
    ````
 
