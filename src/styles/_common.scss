@@ -1,4 +1,16 @@
 /* Variables */
+$grid-breakpoints-prefixes: ("xs", "sm", "md", "lg", "xl", "xxl");
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 16px;
 $container-max-width: 1200px;
 $font-size-root: 16px;
 
