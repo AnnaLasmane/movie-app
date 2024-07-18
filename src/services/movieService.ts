@@ -1,4 +1,3 @@
-// src/services/movieService.ts
 import axios from "axios";
 
 const API_KEY = "8b496706b8901d1260b07a80852b20c3";
