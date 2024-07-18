@@ -22,7 +22,7 @@ const Pagination: React.FC<PaginationProps> = ({
       pageCount={pageCount}
       marginPagesDisplayed={2}
       pageRangeDisplayed={5}
-      onPageChange={onPageChange}
+      onPageChange={(selectedItem) => onPageChange(selectedItem)}
       containerClassName={"pagination"}
       activeClassName={"active"}
       forcePage={currentPage}
