@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+// src/components/HeroContent.tsx
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../redux/Store";
 import { fetchMovies, setCurrentPage } from "../redux/movieSlice";
 import Pagination from "./Pagination";
 import Spinner from "./Spinner";
 import MovieCard from "./MovieCard";
+import Header from "./Header";
 import "../styles/_heroContent.scss";
 
 const ITEMS_PER_PAGE = 10;
@@ -14,13 +16,19 @@ const HeroContent: React.FC = () => {
   const { movies, totalResults, loading, currentPage } = useSelector(
     (state: RootState) => state.movies
   );
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    dispatch(fetchMovies(currentPage + 1));
-  }, [dispatch, currentPage]);
+    dispatch(fetchMovies({ page: currentPage + 1, query: searchQuery }));
+  }, [dispatch, currentPage, searchQuery]);
 
   const handlePageClick = (data: { selected: number }) => {
     dispatch(setCurrentPage(data.selected));
+  };
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    dispatch(setCurrentPage(0)); // Reset to the first page on search
   };
 
   if (loading) {
@@ -31,6 +39,7 @@ const HeroContent: React.FC = () => {
 
   return (
     <div className="hero-content">
+      <Header onSearch={handleSearch} />
       <ul className="movie-list">
         {movies.slice(0, ITEMS_PER_PAGE).map((movie) => (
           <MovieCard
