@@ -2,6 +2,9 @@
 
 This is a Movie App built with React, Redux, TypeScript, and SCSS. The application allows users to browse popular movies, search for movies, and view detailed information about each movie.
 
+### It is deployed to:
+https://feat-movie-app--annas-movie-app.netlify.app/
+
 ## Features
 
 - Browse popular movies
