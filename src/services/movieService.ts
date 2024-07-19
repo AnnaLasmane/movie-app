@@ -1,14 +1,15 @@
 import axios from "axios";
 
-const API_KEY = "8b496706b8901d1260b07a80852b20c3";
-const BASE_URL = "https://api.themoviedb.org/3";
+const API_KEY = process.env.REACT_APP_API_KEY;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export const getMovies = async (page: number, query: string = "") => {
   const response = await axios.get(
     `${BASE_URL}${query ? "/search/movie" : "/movie/popular"}`,
     {
       params: {
         api_key: API_KEY,
-        query: query ? query : undefined,
+        query: query || undefined,
         page,
       },
     }
