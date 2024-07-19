@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/_header.scss";
 
 interface HeaderProps {
+  // eslint-disable-next-line no-unused-vars
   onSearch: (query: string) => void;
 }
 
